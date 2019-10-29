@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <Authors>ygfweb</Authors>
+    <Company>SiHan</Company>
+    <Description>c#工具类</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/ygfweb/SiHan.Libs.Utils</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/ygfweb/SiHan.Libs.Utils</RepositoryUrl>
+  </PropertyGroup>
+</Project>
