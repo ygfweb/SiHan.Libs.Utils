@@ -12,7 +12,7 @@ namespace SiHan.Libs.Utils.IO
     public static class FileHelper
     {
         /// <summary>
-        /// 采用Unicode编码读取文本文件的内容
+        /// 采用UTF8编码读取文本文件的内容
         /// </summary>
         /// <param name="txtFile">文件路径</param>
         /// <returns>返回文件的文本内容</returns>
@@ -36,8 +36,9 @@ namespace SiHan.Libs.Utils.IO
                 return result;
             }
         }
+
         /// <summary>
-        /// 采用Unicode编码覆盖或创建文本文件的内容
+        /// 采用UTF8编码覆盖或创建文本文件的内容
         /// </summary>
         /// <param name="txtFile">文本文件</param>
         /// <param name="text">文本内容</param>

@@ -107,8 +107,6 @@ namespace SiHan.Libs.Utils.Security
         /// <summary>
         /// 解密字符串（使用默认秘钥）
         /// </summary>
-        /// <param name="encryptBase64"></param>
-        /// <returns></returns>
         public static string DecryptWithDefaultKey(string encryptBase64)
         {
             AesEncryptor encrypt = new AesEncryptor();

@@ -62,3 +62,14 @@ PagingResult：分页结果，为业务层提供保存分页数据的基类。
 
 为Regex提供扩展方法GetMatchString()，用于获取匹配文本。
 
+## 1.1.0 版本更新
+
+RandomHelper：随机帮助类：生成随机数字和字符串。
+
+SerializeHelper：序列化帮助类：序列化对象为XML、Byte[]、JSON。
+
+StringHelper：字符串帮助类：拼接、合并、转换字符串。
+
+ReflectionHelper：反射帮助类。
+
+EnumHelper：枚举帮助类。
