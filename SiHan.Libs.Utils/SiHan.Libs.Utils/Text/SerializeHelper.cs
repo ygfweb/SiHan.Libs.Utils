@@ -1,5 +1,4 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
@@ -91,36 +90,6 @@ namespace SiHan.Libs.Utils.Text
                     var obj = (T)binForm.Deserialize(memStream);
                     return obj;
                 }
-            }
-        }
-
-        /// <summary>
-        /// 序列化到JSON字符串
-        /// </summary>
-        public static string ToJson(T obj)
-        {
-            if (obj == null)
-            {
-                return "";
-            }
-            else
-            {
-                return JsonConvert.SerializeObject(obj);
-            }
-        }
-
-        /// <summary>
-        /// 从JSON反序列化到对象
-        /// </summary>
-        public static T FromJson(string json)
-        {
-            if (string.IsNullOrWhiteSpace(json))
-            {
-                return null;
-            }
-            else
-            {
-                return JsonConvert.DeserializeObject<T>(json);
             }
         }
     }

@@ -1,5 +1,4 @@
-﻿using HtmlAgilityPack;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -141,16 +140,6 @@ namespace SiHan.Libs.Utils.Text
         public static string GetGuidString()
         {
             return Guid.NewGuid().ToString().Replace("-", "").ToLower();
-        }
-
-        /// <summary>
-        /// HTML内容转纯文本（即去掉所有HTML标签）
-        /// </summary>
-        public static string HtmlToText(string html)
-        {
-            var doc = new HtmlDocument();
-            doc.LoadHtml(html);
-            return doc.DocumentNode.InnerText;
         }
 
         /// <summary>

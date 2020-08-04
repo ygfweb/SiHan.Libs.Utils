@@ -1,7 +1,7 @@
 # SiHan.Libs.Utils
 ## 介绍
 
-该库提供C#常用工具类，基于netstandard2.0，可以在ASP.NET Core和winform中使用。
+该库提供C#常用工具类，基于netstandard2.0，可以在ASP.NET Core 3.1和winform中使用。
 
 ## 安装
 
@@ -22,6 +22,8 @@ ITextEncryptor：文本加密接口
 AesEncryptor：AES加密器。
 
 Md5Encryptor：MD5加盐
+
+RSAHelper: RSA非对称加密帮助类（不适用ASP.NET Core 2.1）
 
 ### 字符串工具
 
@@ -66,7 +68,7 @@ PagingResult：分页结果，为业务层提供保存分页数据的基类。
 
 RandomHelper：随机帮助类：生成随机数字和字符串。
 
-SerializeHelper：序列化帮助类：序列化对象为XML、Byte[]、JSON。
+SerializeHelper：序列化帮助类：序列化对象为XML、Byte[]。
 
 StringHelper：字符串帮助类：拼接、合并、转换字符串。
 
