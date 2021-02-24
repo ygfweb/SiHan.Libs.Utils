@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using System.Reflection;
 using System.Text;
 
@@ -36,5 +37,35 @@ namespace SiHan.Libs.Utils.Reflection
             }
         }
 
+        /// <summary>
+        /// 将枚举类转换成字典
+        /// </summary>
+        public static Dictionary<T, string> ToDictionary()
+        {
+            Dictionary<T, string> result = new Dictionary<T, string>();
+            Type enumType = typeof(T);
+            foreach (T item in Enum.GetValues(enumType))
+            {
+                string text = GetDescription(item);
+                result.Add(item, text);
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// 获取枚举的最大值
+        /// </summary>
+        public static int GetMaxValue()
+        {
+            return Enum.GetValues(typeof(T)).Cast<int>().Max();
+        }
+
+        /// <summary>
+        /// 获取枚举的最小值
+        /// </summary>
+        public static int GetMinValue()
+        {
+            return Enum.GetValues(typeof(T)).Cast<int>().Min();
+        }
     }
 }

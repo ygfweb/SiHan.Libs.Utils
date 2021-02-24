@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace SiHan.Libs.Utils.Text
 {
@@ -284,6 +285,59 @@ namespace SiHan.Libs.Utils.Text
                 return text.TrimStart('￥').Trim();
             }
             return text;
+        }
+
+        /// <summary>
+        /// 将指定字符串按指定长度进行截取并加上指定的后缀
+        /// </summary>
+        public static string StringTruncat(string oldStr, int maxLength, string endWith = "...")
+        {
+            //判断原字符串是否为空
+            if (string.IsNullOrEmpty(oldStr))
+                return oldStr + endWith;
+
+            //返回字符串的长度必须大于1
+            if (maxLength < 1)
+                throw new Exception("返回的字符串长度必须大于[0] ");
+
+            //判断原字符串是否大于最大长度
+            if (oldStr.Length > maxLength)
+            {
+                //截取原字符串
+                string strTmp = oldStr.Substring(0, maxLength);
+                //判断后缀是否为空
+                if (string.IsNullOrEmpty(endWith))
+                    return strTmp;
+                else
+                    return strTmp + endWith;
+            }
+            return oldStr;
+        }
+
+        /// <summary>
+        /// Pascal风格转小写下划线
+        /// </summary>
+        public static string PascalCaseToUnderscores(string input)
+        {
+            if (string.IsNullOrWhiteSpace(input))
+            {
+                return "";
+            }
+            else
+            {
+                input = input.Trim();
+                string result = "";  //目标字符串
+                for (int j = 0; j < input.Length; j++)
+                {
+                    string temp = input[j].ToString();
+                    if (Regex.IsMatch(temp, "[A-Z]"))
+                    {
+                        temp = "_" + temp.ToLower();
+                    }
+                    result = result + temp;
+                }
+                return result.Trim('_');
+            }
         }
     }
 }
